@@ -79,7 +79,7 @@ class PrintCheque(pyprinter):
             super().Text(tf.top, tf.right, txt, self.drawframe)
 
     def AddSlip(self, acc_name, contact, bank, acc_no):
-
+        super().AddPage()
         self.template['back']['account_name']['text'] = acc_name
         self.template['back']['contact']['text'] = contact
         self.template['back']['bank']['text'] = bank
@@ -91,6 +91,7 @@ class PrintCheque(pyprinter):
         for x, v in self.template['back'].items():
             super().SetFontSize(v['fontheight'])
             super().Text(v['right'], v['top'], v['text'], self.drawframe)
+        super().EndPage()
 
     def AddCheque(self, payee, amount, date):
 
