@@ -1,2 +1,2 @@
 # chequeprinter
-Easy to print cheques with python     
+Easy printing cheques with python     
